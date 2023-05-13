@@ -8,7 +8,7 @@ const Banner = () => {
     <div className="carousel w-full h-[600px]">
       <div id="slide1" className="carousel-item relative w-full">
         <img src={img1} className="w-full rounded-lg" />
-        <div className="absolute flex items-center h-full left-0 top-0 pr-16 pb-7 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+        <div className="absolute flex rounded-lg items-center h-full left-0 top-0 pr-16 pb-7 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
           <div className="text-white space-y-7 ml-20">
             <h2 className="text-6xl font-extrabold">
               Affordable
@@ -41,7 +41,7 @@ const Banner = () => {
       </div>
       <div id="slide2" className="carousel-item relative w-full">
         <img src={img2} className="w-full rounded-lg" />
-        <div className="absolute flex items-center h-full left-0 top-0 pr-16 pb-7 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+        <div className="absolute rounded-lg flex items-center h-full left-0 top-0 pr-16 pb-7 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
           <div className="text-white space-y-7 ml-20">
             <h2 className="text-6xl font-extrabold">
               Affordable
@@ -74,7 +74,7 @@ const Banner = () => {
       </div>
       <div id="slide3" className="carousel-item relative w-full">
         <img src={img3} className="w-full rounded-lg" />
-        <div className="absolute flex items-center h-full left-0 top-0 pr-16 pb-7 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+        <div className="absolute rounded-lg flex items-center h-full left-0 top-0 pr-16 pb-7 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
           <div className="text-white space-y-7 ml-20">
             <h2 className="text-6xl font-extrabold">
               Affordable
@@ -107,7 +107,7 @@ const Banner = () => {
       </div>
       <div id="slide4" className="carousel-item relative w-full">
         <img src={img4} className="w-full rounded-lg" />
-        <div className="absolute flex items-center h-full left-0 top-0 pr-16 pb-7 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+        <div className="absolute flex rounded-lg items-center h-full left-0 top-0 pr-16 pb-7 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
           <div className="text-white space-y-7 ml-20">
             <h2 className="text-6xl font-extrabold">
               Affordable
@@ -122,7 +122,9 @@ const Banner = () => {
               the majority have suffered alteration in some form
             </p>
             <div className="mt-7">
-              <button className="btn bg-[#FF3811] mr-4">Discover More</button>
+              <button className="btn border-0 bg-[#FF3811] mr-4">
+                Discover More
+              </button>
               <button className="btn btn-outline btn-accent">
                 Latest Project
               </button>
