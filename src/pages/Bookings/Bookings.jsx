@@ -9,7 +9,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const navigate = useNavigate();
 
-  const url = `https://cars-doctor-b360f.web.app/bookings?email=${user?.email}`;
+  const url = `https://car-doctor-server-dlftyu7fx-naimuralltime.vercel.app/bookings?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url, {
@@ -31,13 +31,16 @@ const Bookings = () => {
 
   const handleBookingConfirm = (_id) => {
     // data fetching post api
-    fetch(`https://cars-doctor-b360f.web.app/bookings/${_id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ status: "confirm" }),
-    })
+    fetch(
+      `https://car-doctor-server-dlftyu7fx-naimuralltime.vercel.app/bookings/${_id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ status: "confirm" }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -70,9 +73,12 @@ const Bookings = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // delete to database
-        fetch(`https://cars-doctor-b360f.web.app/bookings/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://car-doctor-server-dlftyu7fx-naimuralltime.vercel.app/bookings/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

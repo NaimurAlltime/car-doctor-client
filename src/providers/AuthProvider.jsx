@@ -49,13 +49,16 @@ const AuthProvider = ({ children }) => {
           email: currentUser.email,
         };
 
-        fetch("https://cars-doctor-b360f.web.app/jwt", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(loggedUser),
-        })
+        fetch(
+          "https://car-doctor-server-dlftyu7fx-naimuralltime.vercel.app/jwt",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(loggedUser),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log("jwt response", data);

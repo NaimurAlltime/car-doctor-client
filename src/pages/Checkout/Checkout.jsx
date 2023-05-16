@@ -26,13 +26,16 @@ const Checkout = () => {
     console.log(booking);
 
     // data fetching post api
-    fetch("https://cars-doctor-b360f.web.app/bookings", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(booking),
-    })
+    fetch(
+      "https://car-doctor-server-dlftyu7fx-naimuralltime.vercel.app/bookings",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(booking),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

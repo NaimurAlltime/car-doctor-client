@@ -33,7 +33,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://cars-doctor-b360f.web.app/services/${params.id}`),
+          fetch(
+            `https://car-doctor-server-dlftyu7fx-naimuralltime.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/bookings",
