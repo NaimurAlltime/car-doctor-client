@@ -9,7 +9,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const navigate = useNavigate();
 
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  const url = `https://cars-doctor-b360f.web.app/bookings?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url, {
@@ -31,7 +31,7 @@ const Bookings = () => {
 
   const handleBookingConfirm = (_id) => {
     // data fetching post api
-    fetch(`http://localhost:5000/bookings/${_id}`, {
+    fetch(`https://cars-doctor-b360f.web.app/bookings/${_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const Bookings = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // delete to database
-        fetch(`http://localhost:5000/bookings/${_id}`, {
+        fetch(`https://cars-doctor-b360f.web.app/bookings/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -26,7 +26,7 @@ const Checkout = () => {
     console.log(booking);
 
     // data fetching post api
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://cars-doctor-b360f.web.app/bookings", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

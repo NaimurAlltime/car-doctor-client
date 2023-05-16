@@ -49,7 +49,7 @@ const AuthProvider = ({ children }) => {
           email: currentUser.email,
         };
 
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://cars-doctor-b360f.web.app/jwt", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
