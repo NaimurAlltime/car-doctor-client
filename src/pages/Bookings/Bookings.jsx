@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 import TableRow from "./TableRow";
@@ -6,14 +7,27 @@ import TableRow from "./TableRow";
 const Bookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
+  const navigate = useNavigate();
 
   const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
   useEffect(() => {
-    fetch(url)
+    fetch(url, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("car-access-token")}`,
+      },
+    })
       .then((res) => res.json())
-      .then((data) => setBookings(data));
-  }, [url]);
+      .then((data) => {
+        if (!data.error) {
+          setBookings(data);
+        } else {
+          // logout then navigate
+          navigate("/");
+        }
+      });
+  }, [url, navigate]);
 
   const handleBookingConfirm = (_id) => {
     // data fetching post api

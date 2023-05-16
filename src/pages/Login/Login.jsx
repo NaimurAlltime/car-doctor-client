@@ -1,11 +1,14 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../../src/assets/images/login/login.svg";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -17,9 +20,11 @@ const Login = () => {
     //login with firebase authentication
     loginUser(email, password)
       .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        navigate("/");
+        const user = result.user;
+        console.log(user);
+        navigate(from, { replace: true });
+
+        // data fetching post api with jwt
       })
       .catch((error) => {
         console.log(error.message);
@@ -81,6 +86,7 @@ const Login = () => {
                 SignUp
               </Link>
             </p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>
